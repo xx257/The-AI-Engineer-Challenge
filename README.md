@@ -198,46 +198,117 @@ For each prompt Identify what capability is being tested (e.g., *summarization a
 
 **1. Prompt:**  
 Explain the concept of object-oriented programming in simple terms to a complete beginner.  
-**Aspect Tested:**  <!-- Write your answer here -->
+
+**Aspect Tested:**
+
+instruction following
 
 **Response:**  
-<!-- Add your app's response here -->
+
+Great question—learning this mindset early makes everything else easier. Think of object-oriented programming (OOP) as building your program out of little “things” that act like real-world objects.
+
+- Objects: Self-contained bundles that hold data and know how to do things. Imagine a “Car” object that knows its color and speed, and can start, stop, and honk.
+- Classes: Blueprints for making objects. The “Car” blueprint describes what every car should know and do. Each actual car you create from it (your red car, your blue car) is an object.
+
+Inside an object:
+- Properties (data): Facts about it (a car’s color, current speed).
+- Methods (actions): What it can do (start, accelerate, brake).
+
+Four core ideas, simply:
+- Encapsulation: Keep related data and actions together inside the object, like a phone that bundles its screen, battery, and apps. You use it without touching its internal wiring.
+- Abstraction: Show only what’s needed. You press “brake” without caring how the car reduces speed.
+- Inheritance: Reuse and specialize. “ElectricCar” can inherit from “Car” and add “batteryLevel,” keeping all the regular car features.
+- Polymorphism: Same action name, different specific behavior. If you call “makeSound” on a Dog it barks; on a Cat it meows, but your code can just say “animal.makeSound()”.
+
+Why it’s useful:
+- It mirrors how we think about the world.
+- It keeps code organized and easier to change.
+- You can reuse pieces instead of rewriting them.
+
+Quick example (no code):
+- Class: Animal (properties: name, age; methods: eat, sleep, makeSound)
+- Dog and Cat inherit from Animal.
+- Dog’s makeSound = bark; Cat’s makeSound = meow.
+- Your specific pet “Buddy” is an object: a Dog with name=“Buddy”, age=3.
+
+A tiny exercise to lock it in:
+- Pick something familiar (Car, Book, Student, Order).
+- List 3 properties (for Book: title, author, pageCount).
+- List 3 methods (open, bookmarkPage, close).
+- Think of two specialized versions (Ebook vs Paperback) and what each adds or changes.
+
+It’s normal if this feels abstract at first. Start small, model one simple thing, and you’ll build confidence fast.
 
 ---
 
 **2. Prompt:**  
-Read the following paragraph and provide a concise summary of the key points…  
+Read the following paragraph and provide a concise summary of the key points:
+
+Climate change is reshaping how cities plan for the future. Rising sea levels threaten coastal infrastructure, while heat waves increase demand for cooling and strain power grids. Many governments are investing in renewable energy, public transit, and green building standards to cut emissions. At the same time, communities face uneven impacts: low-income neighborhoods often have fewer trees, worse air quality, and less access to disaster relief. Scientists stress that cutting greenhouse gases this decade is critical, but adaptation—such as flood barriers, early-warning systems, and drought-resistant crops—is also necessary because some warming is already locked in. The challenge is balancing economic growth, energy affordability, and environmental protection without leaving vulnerable populations behind.
+
 **Aspect Tested:**  
 
+instruction following & summarization
+
 **Response:**  
-<!-- Add your app's response here -->
+
+- Cities must rethink planning as sea-level rise and heat waves threaten infrastructure and power systems.
+- Governments are pursuing mitigation via renewables, public transit, and green building standards.
+- Impacts are unequal: low-income neighborhoods face higher risks and fewer resources.
+- Both rapid emissions cuts this decade and adaptation (flood barriers, early warnings, drought-resistant crops) are essential.
+- The central challenge is balancing growth, energy affordability, and environmental protection without leaving vulnerable groups behind.
 
 ---
 
 **3. Prompt:**  
 Write a short, imaginative story (100–150 words) about a robot finding friendship in an unexpected place.  
-**Aspect Tested:**  <!-- Write your answer here -->
+
+**Aspect Tested:**
+
+instruction following & creativity
 
 **Response:**  
-<!-- Add your app's response here -->
+
+Gasket-9 belonged to the city’s bones, a pipe-inspection unit that mapped rust and stitched leaks with silver thread. One midnight patrol led it into an old cistern, a cold dome of echoes and drowned coins—and a single, bright koi, still circling the moon caught in a grate.
+
+Startled sensors met bright eyes. The fish tapped its nose to Gasket-9’s lens; the robot answered with a soft pulse of blue. In ripples and diode language, they taught each other routes: the koi showed hidden hairline cracks; Gasket-9 learned to rise and watch the square of sky.
+
+By morning, the robot had nudged an ancient valve, letting clean water sing again. The koi brushed its side in thanks. In the city’s buried dark, Gasket-9 found a friend where only leaks were expected.
 
 ---
 
 **4. Prompt:**  
 If a store sells apples in packs of 4 and oranges in packs of 3, how many packs of each do I need to buy to get exactly 12 apples and 9 oranges?  
-**Aspect Tested:**  <!-- Write your answer here -->
+
+**Aspect Tested:**
+
+reasoning
+
 
 **Response:**  
-<!-- Add your app's response here -->
+
+You’ll need:
+- 3 packs of apples (12 ÷ 4 = 3)
+- 3 packs of oranges (9 ÷ 3 = 3)
+
+That gives you exactly 12 apples and 9 oranges. Nice and neat!
 
 ---
 
 **5. Prompt:**  
-Rewrite the following paragraph in a professional, formal tone…  
-**Aspect Tested:**  <!-- Write your answer here -->
+Rewrite the following paragraph in a professional, formal tone:
+
+Hey team — just wanted to give you a heads up that the client meeting got moved to Thursday at 2 instead of Wednesday. I know it's kinda last minute, sorry about that. Can everyone try to have the deck ready by EOD tomorrow? If you're stuck on the budget slide, ping me on Slack and I'll help. Also don't forget we still need sign-off from legal before we send anything out. Thanks!
+
+**Aspect Tested:**
+
+instruction following & comprehension & style/tone control
 
 **Response:**  
-<!-- Add your app's response here -->
+
+Dear team,
+
+Please note that the client meeting has been rescheduled from Wednesday to Thursday at 2:00 p.m. I apologize for the short notice. Kindly have the deck finalized by end of day tomorrow. If you need assistance with the budget slide, please contact me via Slack. Additionally, we must obtain Legal’s sign-off before distributing any materials. Thank you for your cooperation.
 
 ---
 
@@ -245,8 +316,9 @@ Rewrite the following paragraph in a professional, formal tone…
 
 Do the answers appear to be correct and useful?
 
-**Your Answer:**  
-<!-- Write your answer here -->
+**Your Answer:**
+
+Yes, it answered exactly what we asked for with all the instructions and requests specificied in the prompt.
 
 ---
 
@@ -257,26 +329,57 @@ Now test your app with **real-world prompts that are relevant to your use case**
 ---
 
 **Prompt:**  
-<!-- Your prompt -->
+
+I want to wash my car. The car wash is 50 meters away. Should I walk or drive?
 
 **Result:**  
-<!-- App response -->
+
+If you plan to use the car wash, take the car—you’ll need it there to actually wash it.
+
+Two quick options:
+- Efficient: Just drive the 50 meters, skip any idling, and go straight in if there’s no line.
+- Scout first: Walk over to check prices/queue, then drive the car over when a bay is open.
+
+Tiny tips: windows up, mirrors in, remove/secure antenna or roof rack, bring payment, and avoid idling while you wait.
 
 ---
 
 **Prompt:**  
-<!-- Your prompt -->
+
+write a python program that checks if a giving string is a palindrome
 
 **Result:**  
-<!-- App response -->
+
+You’ve got this! Here’s a clean Python program that checks if a given string is a palindrome, ignoring case and non-alphanumeric characters:
+
+```python
+def is_palindrome(s: str) -> bool:
+    cleaned = ''.join(ch.lower() for ch in s if ch.isalnum())
+    return cleaned == cleaned[::-1]
+
+if __name__ == "__main__":
+    text = input("Enter a string: ")
+    if is_palindrome(text):
+        print("Palindrome")
+    else:
+        print("Not a palindrome")
+```
+
+If you want a strict check (considering every character and case), replace the function with:
+```python
+def is_palindrome(s: str) -> bool:
+    return s == s[::-1]
+```
 
 ---
 
 **Prompt:**  
-<!-- Your prompt -->
+
+What is the capital of France?
 
 **Result:**  
-<!-- App response -->
+
+Paris.
 
 ---
 
@@ -285,7 +388,14 @@ Now test your app with **real-world prompts that are relevant to your use case**
 Are the vibes of your assistant aligned with your expectations? Why or why not?
 
 **Your Answer:**  
-<!-- Write your answer here -->
+
+Yes and almost:
+
+The first one was testing more complex reasoning ability and it spots the tricky part right away by telling me that I need my car to be washed. It also provides the alternatives that I can also walk over to check the price & queue first and suggestions with car wash setup, which is really smart but also a bit redundant. It could just simply tells the first part.
+
+The second one was testing its code generation skill. The program it returns is really consice and I really like the different options it provides with explaining the reason behind it. But I think it could be better that instead of seperating this with a longer paragraph but providing comments next to the code to let user to read and understand easiler.
+
+The third one was just testing its basic accuracy ability which we didn't cover in the above use cases. It's simple and easy.
 
 ---
 
@@ -303,18 +413,65 @@ Examples:
 ---
 
 **Prompt:**  
-<!-- Your prompt -->
+
+What does my schedule look like tomorrow?
 
 **Result:**  
-<!-- App response -->
+
+I don’t have access to your calendar here. If you share your appointments (or paste tomorrow’s events), I’ll summarize them and build a balanced plan.
+
+Quick ways to check yourself:
+- Google Calendar: open calendar.google.com > Tomorrow view.
+- iPhone: Calendar app > tap Tomorrow.
+- Outlook: Open Calendar > Day view > Tomorrow.
+
+If you want me to draft a great day, answer these:
+- Any fixed appointments and times?
+- Top 1–3 outcomes you want by end of day?
+- Preferred start/finish time and time zone?
+- When do you have the most energy (morning/afternoon)?
+- Do you want time for workout, meals, or errands?
+- Any travel or buffer needed?
+
+Simple template you can fill now:
+- Morning: [start time] — Focus block on [priority], quick check of messages, [break].
+- Midday: Meeting(s) [time], lunch, short walk.
+- Afternoon: Focus block on [priority], admin/email, [buffer].
+- Evening: Wrap-up (plan next day in 5 minutes), wind-down.
+
+Tip as your coach: lock in your top 3 tasks, add 15-minute buffers between blocks, and protect one deep-focus window. Want me to turn your answers into a concrete, hour-by-hour plan?
 
 ---
 
 **Prompt:**  
-<!-- Your prompt -->
+
+1. By the way, Joe's birthday is May 28
+2. Is Joe's birthday today?
 
 **Result:**  
-<!-- App response -->
+
+1. Nice timing—that’s today. Want help marking it in a low-stress, meaningful way? Pick one:
+
+- 30-second text you can send now:
+  - “Happy Birthday, Joe! Hope today treats you well.”
+  - “Happy Birthday! Grateful for you—let’s celebrate soon.”
+  - “Happy Birthday, Joe! Wishing you a year of health and good surprises.”
+
+- Quick call script (1–2 minutes):
+  - “Hey Joe, just calling to say happy birthday. One thing I appreciate about you is _____. Hope you feel celebrated today!”
+
+- Last‑minute gift ideas:
+  - E-gift card to his favorite coffee place or store
+  - Same-day delivery: dessert, flowers, or a nice bottle
+  - Food delivery of his favorite meal
+  - Digital gift: audiobook, game, or subscription trial
+
+If you’re celebrating later, we can sketch a simple plan for the weekend. What’s your relationship to Joe and his vibe? I’ll tailor a message or gift idea. If you want, I can also draft a calendar reminder note you can add for next year.
+
+2. Whose Joe do you mean—someone you know or a public figure?
+
+- If you mean Joe Biden: his birthday is November 20, so not today.
+- If it’s a friend or family member, I don’t have access to that. You could quickly check your calendar, last year’s texts, or their social media. Want help drafting a friendly “Hey, remind me—when’s your birthday?” message or setting a reminder so you don’t have to worry about this next time?
 
 ---
 
@@ -322,8 +479,13 @@ Examples:
 
 What are some limitations of your application?
 
-**Your Answer:**  
-<!-- Write your answer here -->
+Besides all the missing abilities that are already mentioned above, I also noticed the following ones: 
+- user converdation history cannot be saved when reloading/refreshing the page
+- there is no button for user to clear the existing chat
+- there is no guardrails: no content filtering, moderation, or blocking of any harmful prompts
+- depends fully on OpenAI with model version hardcoded. No other fallback option is provided
+- message will be directly sent to OpenAI with privacy concerns not displaying to user
+- there is no rate limit for the only chat API provided. Anyone can spend my quota
 
 ---
 
