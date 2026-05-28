@@ -66,10 +66,23 @@ export default function ChatTerminal() {
         body: JSON.stringify({ message: trimmed }),
       });
 
-      const data = (await res.json()) as { reply?: string; detail?: string };
+      const raw = await res.text();
+      let data: { reply?: string; detail?: string | unknown };
+      try {
+        data = raw ? (JSON.parse(raw) as { reply?: string; detail?: unknown }) : {};
+      } catch {
+        throw new Error(
+          `API returned non-JSON (HTTP ${res.status}). ` +
+            "Check Vercel routing to FastAPI and that OPENAI_API_KEY is set.",
+        );
+      }
 
       if (!res.ok) {
-        throw new Error(data.detail ?? `Request failed (${res.status})`);
+        const detail =
+          typeof data.detail === "string"
+            ? data.detail
+            : JSON.stringify(data.detail ?? raw);
+        throw new Error(detail || `Request failed (${res.status})`);
       }
 
       const reply = data.reply ?? "(no response)";
