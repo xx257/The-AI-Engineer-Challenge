@@ -1,0 +1,49 @@
+/* Matrix terminal theme — high contrast green phosphor on near-black */
+:root {
+  --matrix-bg: #020a02;
+  --matrix-panel: #041204;
+  --matrix-green: #00ff41;
+  --matrix-green-dim: #00b32d;
+  --matrix-green-muted: #008f24;
+  --matrix-glow: rgba(0, 255, 65, 0.35);
+  --matrix-text: #c8ffc8;
+  --matrix-error: #ff4466;
+  --font-mono: "Courier New", Courier, "Lucida Console", monospace;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  background: var(--matrix-bg);
+  color: var(--matrix-text);
+  font-family: var(--font-mono);
+}
+
+body {
+  overflow: hidden;
+}
+
+/* Subtle CRT scanlines over the whole viewport */
+body::after {
+  content: "";
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.12) 0px,
+    rgba(0, 0, 0, 0.12) 1px,
+    transparent 1px,
+    transparent 3px
+  );
+  opacity: 0.4;
+}

@@ -1,0 +1,185 @@
+.wrapper {
+  position: relative;
+  z-index: 1;
+  width: min(900px, 100%);
+  max-height: min(85vh, 720px);
+  display: flex;
+  flex-direction: column;
+  background: var(--matrix-panel);
+  border: 1px solid var(--matrix-green-muted);
+  box-shadow:
+    0 0 24px var(--matrix-glow),
+    inset 0 0 40px rgba(0, 255, 65, 0.03);
+  border-radius: 4px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.65rem 1rem;
+  border-bottom: 1px solid var(--matrix-green-muted);
+  background: rgba(0, 255, 65, 0.06);
+  flex-shrink: 0;
+}
+
+.title {
+  color: var(--matrix-green);
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  text-shadow: 0 0 8px var(--matrix-glow);
+}
+
+.status {
+  font-size: 0.7rem;
+  color: var(--matrix-green-dim);
+  letter-spacing: 0.08em;
+}
+
+.log {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1rem 1.25rem;
+  min-height: 280px;
+  max-height: 55vh;
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+
+.line {
+  margin-bottom: 0.75rem;
+  word-break: break-word;
+  white-space: pre-wrap;
+}
+
+.user .text {
+  color: var(--matrix-green);
+}
+
+.coach .text {
+  color: var(--matrix-text);
+}
+
+.system .text {
+  color: var(--matrix-green-dim);
+  font-size: 0.85rem;
+}
+
+.prefix {
+  color: var(--matrix-green-muted);
+  user-select: none;
+}
+
+.blink {
+  animation: blink 1s step-end infinite;
+  color: var(--matrix-green);
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+.errorBanner {
+  margin: 0;
+  padding: 0.5rem 1rem;
+  font-size: 0.8rem;
+  color: var(--matrix-error);
+  border-top: 1px solid rgba(255, 68, 102, 0.4);
+  background: rgba(255, 68, 102, 0.08);
+}
+
+.form {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  border-top: 1px solid var(--matrix-green-muted);
+  background: rgba(0, 0, 0, 0.35);
+  flex-shrink: 0;
+}
+
+.promptLabel {
+  color: var(--matrix-green);
+  font-size: 0.85rem;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.input {
+  flex: 1;
+  min-width: 0;
+  padding: 0.5rem 0.65rem;
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  color: var(--matrix-text);
+  background: #010801;
+  border: 1px solid var(--matrix-green-muted);
+  border-radius: 2px;
+  outline: none;
+}
+
+.input::placeholder {
+  color: var(--matrix-green-muted);
+  opacity: 0.8;
+}
+
+.input:focus {
+  border-color: var(--matrix-green);
+  box-shadow: 0 0 10px var(--matrix-glow);
+}
+
+.input:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.sendBtn {
+  flex-shrink: 0;
+  padding: 0.5rem 1rem;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  color: var(--matrix-bg);
+  background: var(--matrix-green);
+  border: 1px solid var(--matrix-green);
+  border-radius: 2px;
+  cursor: pointer;
+  transition: box-shadow 0.15s ease;
+}
+
+.sendBtn:hover:not(:disabled) {
+  box-shadow: 0 0 14px var(--matrix-glow);
+}
+
+.sendBtn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.visuallyHidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Scrollbar styling for terminal log */
+.log::-webkit-scrollbar {
+  width: 8px;
+}
+
+.log::-webkit-scrollbar-track {
+  background: #010801;
+}
+
+.log::-webkit-scrollbar-thumb {
+  background: var(--matrix-green-muted);
+  border-radius: 2px;
+}

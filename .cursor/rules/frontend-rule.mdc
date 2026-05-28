@@ -11,3 +11,10 @@ alwaysApply: false
 - You should use Next.js as it works best with Vercel. 
 - This frontend will ultimately be deployed on Vercel, but it should be possible to test locally. 
 - Always provide users with a way to run the created UI once you have created it.
+
+### Matrix terminal theme
+
+- **Aesthetic:** Retro CRT terminal inspired by *The Matrix* — near-black background, phosphor green accents, monospace type, subtle scanlines.
+- **Colors:** Background `#020a02`, panel `#041204`, primary green `#00ff41`, body text `#c8ffc8`, dim green `#00b32d`, errors `#ff4466`.
+- **Motion:** Optional low-opacity canvas “digital rain” behind the UI; must not reduce text readability.
+- **UX:** Shell-style prompt (`neo@matrix:~$`), scrollable transcript, TX button + Enter to send.
